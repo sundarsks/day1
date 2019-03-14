@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
       <style>
 .logo {
 max-width: 50px;
@@ -75,7 +76,7 @@ h3{
 }
 
 	.followus{
-	 position: fixed;
+	
 	  
 	  color:white;
     
@@ -101,16 +102,16 @@ h3{
 	 color: yellow;
   } 
  
-ul {
+/*ul {
 list-style-image: url('list.png');
-}
+} */
 
  .header {
   overflow: hidden;
   background-color: black;
   position:fixed;
     top:0px;
-    width:100%;
+    width:82%;
   margin:0 auto;  
   
 }
@@ -163,20 +164,166 @@ overflow: auto;
 
 }
 
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+}
+
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+
+.main {
+  margin-left: 200px; 
+  font-size: 20px; 
+  padding: 0px 10px;
+}
+
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.second-level-menu
+{
+    position: absolute;
+       top: 90px;
+    left: 120px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.second-level-menu > li
+{
+    position: relative;
+    height: 30px;
+    background: #999999;
+}
+.second-level-menu > li:hover { background: white; }
+
+.third-level-menu
+{
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.third-level-menu > li
+{
+    height: 30px;
+    background: #999999;
+}
+.third-level-menu > li:hover { background: white; }
+
+.top-level-menu
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.top-level-menu > li:hover { background: #CCCCCC; }
+
+.top-level-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+
+/* Menu Link Styles */
+
+
+.top-level-menu a:hover { color: #000000; }
  </style>
     </head>
-    <body>
-      <div class="header">
+    <body >
+     
+<div class="sidenav">
+<ul id="test" onmouseover="onselecting(event)" class="top-level-menu">
+    <li ><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li >
+        <a  href="#">Offices</a>
+        <ul class="second-level-menu">
+            <li><a href="#">Chicago</a></li>
+            <li><a href="#">Los Angeles</a></li>
+            <li >
+                <a href="#">New York</a>
+                <ul class="third-level-menu">
+                    <li ><a href="#">Information</a></li>
+                    <li><a href="#">Book a Meeting</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Seattle</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div class="main" >
+ <div class="header">
         <img src="logo.jpg" class="logo"/>
-        <div class="header-right">
+        <div class="header-right ">
           <a href="#home">Home</a>
           <a href="#contact">Contact</a>
           <a href="#about">About</a>
         </div>
       </div>
+	  
       <div style="padding-left:20px">
         <h1>Welcome</h1>
       </div>
+	  
+
+
       <div class="overfollow">
       <div id="section1" >
         <h1  class="padding">Motor Sports</h1>
@@ -262,5 +409,15 @@ overflow: auto;
             </a>
             </div>
           </div>
-        </body>
-      </html>
+		  </div>
+		  <script>
+		 
+
+			function onselecting(event) {
+					var target = event.target || event.srcElement;
+					console.log(event.target.innerHTML);
+				}
+		 
+		</script>		  
+       </body>
+    </html>
