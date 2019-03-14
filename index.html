@@ -111,7 +111,7 @@ list-style-image: url('list.png');
   background-color: black;
   position:fixed;
     top:0px;
-    width:82%;
+    width:85%;
   margin:0 auto;  
   
 }
@@ -155,7 +155,7 @@ list-style-image: url('list.png');
 }
 .space
 {
-  margin-top:25px;
+  margin-top:20px;
 }
 .overfollow
 {
@@ -285,24 +285,22 @@ overflow: auto;
     <body >
      
 <div class="sidenav">
-<ul id="test" onmouseover="onselecting(event)" class="top-level-menu">
-    <li ><a href="#">About</a></li>
+<ul id="test" onclick="onselecting(event)" class="top-level-menu">
+    <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
-    <li >
-        <a  href="#">Offices</a>
+    <li><a  href="#">Others</a>
         <ul class="second-level-menu">
-            <li><a href="#">Chicago</a></li>
-            <li><a href="#">Los Angeles</a></li>
+
             <li >
-                <a href="#">New York</a>
+                <a href="#">Products</a>
                 <ul class="third-level-menu">
                     <li ><a href="#">Information</a></li>
-                    <li><a href="#">Book a Meeting</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Models</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Online Store</a></li>
                 </ul>
             </li>
-            <li><a href="#">Seattle</a></li>
+            <li><a href="#">Carreer</a></li>
         </ul>
     </li>
     <li><a href="#">Contact</a></li>
@@ -319,7 +317,7 @@ overflow: auto;
       </div>
 	  
       <div style="padding-left:20px">
-        <h1>Welcome</h1>
+    
       </div>
 	  
 
@@ -415,7 +413,20 @@ overflow: auto;
 
 			function onselecting(event) {
 					var target = event.target || event.srcElement;
-					console.log(event.target.innerHTML);
+// 				//	console.log(event.target.innerHTML);
+  
+//           var parent = document.getElementById("test");
+// //console.log(parent.childNodes);
+// var child = parent.childNodes[5].innerText;
+// console.log(child);
+// var childval = child.innerText;
+// //console.log(childval);
+        let len = document.querySelectorAll('li:hover').length;
+        let i=1;
+        while(i<=len){
+          console.log(document.querySelectorAll('li:hover')[len-i].firstElementChild.innerText);
+          i = i+1;
+        }
 				}
 		 
 		</script>		  
